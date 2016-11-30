@@ -1,0 +1,164 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+<style>
+form {
+    max-width: 600px;
+}
+
+input[type=text] {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+;
+}
+input[type=password] {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 10%;
+}
+
+.closebtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+.container {
+    padding: 16px;
+    width: 100%;
+}
+
+span {
+    float: right;
+    padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5px auto; /* 15% from the top and centered */
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    right: 25px;
+    top:0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+</style>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="product">首頁</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="po">已購買</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="showCart"><span class="glyphicon glyphicon-shopping-cart"></span> 購物車</a></li>
+      <li><a onclick="document.getElementById('id01').style.display='block'"><span class="glyphicon glyphicon-log-in"></span> 登入</a></li>
+
+    </ul>
+  </div>
+  <div id="id01" class="modal" >
+  <span onclick="document.getElementById('id01').style.display='none'" 
+  class="close">&times;</span>
+  
+  <form class="modal-content animate" action="login" method = POST>
+    <div class="imgcontainer">
+      <img src="/src/css/Avatar.png" alt="Avatar" width="50%">
+    </div>
+    <div class="container">    	
+		<b>帳號:</b><input type="text" placeholder="輸入帳號" name ="name" style="margin-left: 100px" required>
+		<div><b>密碼:</b><input type="password" placeholder="數入密碼" name ="password"  style="margin-left: 100px" required></div>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+    	<button type="submit" style="width:20%" >登入</button>
+		<input type="checkbox" checked="checked" > Remember me 
+      <span><a href="newuser">新會員</a></span>
+    </div>
+    </form>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
+  
+</nav>
