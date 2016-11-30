@@ -33,7 +33,6 @@ import com.sample.product.dao.PurchaseOrderDAO;
  */
 @Controller
 public class ProductController {
-	
 	private static final Logger logger = LoggerFactory.getLogger(ProductController.class);
 	ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 	
